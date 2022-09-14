@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <!-- tenrihotel.ruangan tree view -->
+    <record id="tenrihotel_restoran_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Restoran</field>
+        <field name="model">tenrihotel.restoran</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name" />
+                <field name="harga" />
+                <field name="stok" />
+                <field name="restoranitem_id" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- tenrihotel.ruangan form view -->
+    <record id="tenrihotel_restoran_view_form" model="ir.ui.view">
+        <field name="name">Form Restoran</field>
+        <field name="model">tenrihotel.restoran</field>
+        <field name="arch" type="xml">
+            <form string="Restoran">
+                <sheet>
+                    <group name="Restoran" string="Restoran">
+                        <!-- Add your fields here -->
+                        <field name="name" />
+                        <field name="stok" />
+                        <field name="harga" />
+                    </group>
+
+                    <group name="Tipe Restoran" string="Tipe Restoran">
+                        <field name="restoranitem_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- tenrihotel.restoran action window -->
+    <record id="tenrihotel_restoran_action" model="ir.actions.act_window">
+        <field name="name">Daftar Restoran</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tenrihotel.restoran</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem
+        id="tenrihotel_restoran_menu_act"
+        name="Jenis Makanan"
+        parent="tenrihotel_fasilitas_menu_categ"
+        action="tenrihotel_restoran_action"
+        sequence="20"/>
+
+</odoo>

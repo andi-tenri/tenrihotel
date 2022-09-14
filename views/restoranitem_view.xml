@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Perubahannya ada di sini -->
+    <!-- tenrihotel.ruangan tree view -->
+    <record id="tenrihotel_restoranitem_view_tree" model="ir.ui.view">
+        <field name="name">tenrihotel.restoranitem.view.tree</field>
+        <field name="model">tenrihotel.restoranitem</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="kode_kelompok"/>
+                <field name="jml_item" />
+                <field name="daftar" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- tenrihotel.tiperuangan form view -->
+    <record id="tenrihotel_restoranitem" model="ir.ui.view">
+        <field name="name">tenrihotel.restoranitem.view.form</field>
+        <field name="model">tenrihotel.restoranitem</field>
+        <field name="arch" type="xml">
+            <form string="Kelompok Makanan">
+                <sheet>
+                    <group name="Restoran" string="Restoran Item">
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="kode_kelompok"/>
+                        <field name="jml_item" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+		<!-- Akhir Perubahan -->
+
+    <!-- tenrihotel.tiperuangan action window -->
+    <record id="tenrihotel_restoranitem_action" model="ir.actions.act_window">
+        <field name="name">Kelompok Restoran</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tenrihotel.restoranitem</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="tenrihotel_restoranitem_menu_act"
+        name="Tipe Makanan"
+        parent="tenrihotel_fasilitas_menu_categ"
+        action="tenrihotel_restoranitem_action"
+        sequence="10"/>
+
+</odoo>

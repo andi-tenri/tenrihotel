@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_pemesanan_pdf">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+            <!-- <t t-call="web.external_layout"> -->
+                <div class="page">
+                    <h2><b>FAKTUR PEMESANAN</b></h2>
+                    <t t-foreach="docs" t-as="d">
+                        <div class="row">
+                            <div class="col-4">Kode Order:</div>
+                            <div class="col-8"><span t-field="d.name"/></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">Nama Pembeli:</div>
+                            <div class="col-8"><span t-field="d.nama_pembeli"/></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">Tanggal Transaksi:</div>
+                            <div class="col-8"><span t-field="d.tgl_checkin"/></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">Jumlah (Rp):</div>
+                            <div class="col-8"><span t-field="d.total_bayar"/></div>
+                        </div>
+                        
+                        <t t-foreach="d.detailpemesanan_ids" t-as="ds">
+                            <div class="row">
+                                <div class="col-4">Ruangan:</div>
+                                <div class="col-8"><span t-field="ds.ruangan_id.name"/></div>
+                            </div>
+                        </t>
+
+                        <t t-foreach="d.detailpemesanan_ids" t-as="ds">
+                            <div class="row">
+                                <div class="col-4">Ruangan:</div>
+                                <div class="col-8"><span t-field="ds.fasilitas_id.name"/></div>
+                            </div>
+                        </t>
+
+                        <t t-foreach="d.detailpemesanan_ids" t-as="ds">
+                            <div class="row">
+                                <div class="col-4">Ruangan:</div>
+                                <div class="col-8"><span t-field="ds.restoran_id.name"/></div>
+                            </div>
+                        </t>
+                        
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- tenrihotel.pemesanan tree view -->
+    <record id="tenrihotel_pemesanan_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Pemesanan</field>
+        <field name="model">tenrihotel.pemesanan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="nama_pembeli" />
+                <field name="tgl_checkin" />
+                <field name="total_bayar" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- tenrihotel.pemesanan form view -->
+    <record id="tenrihotel_pemesanan_view_form" model="ir.ui.view">
+        <field name="name">Form Pemesanan</field>
+        <field name="model">tenrihotel.pemesanan</field>
+        <field name="arch" type="xml">
+            <form string="Form Pemesanan">
+                <sheet>
+                    <group name="Pemesanan">
+                        <field name="name" />
+                        <field name="nama_pembeli" />
+                        <field name="tgl_checkin" />
+                        <field name="total_bayar" />
+                    </group>
+                        <field name="detailpemesanan_ids" >
+                            <tree editable="bottom">
+                                <field name="ruangan_id"/>
+                                <field name="fasilitas_id"/>
+                                <field name="restoran_id"/>
+                                <field name="hrg_ruangan"/>
+                                <field name="hrg_fasilitas"/>
+                                <field name="hrg_restoran"/>
+                                <field name="qty"/>
+                                <field name="qty01"/>
+                                <field name="qty02"/>
+                                <field name="subtotal" sum="Total"/>
+                            </tree>
+                        </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- tenrihotel.pemesanan action window -->
+    <record id="tenrihotel_pemesanan_action" model="ir.actions.act_window">
+        <field name="name">Pemesanan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tenrihotel.pemesanan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="pemesanan_view_menu_act" 
+        name="Pemesanan" 
+        parent="tenrihotel_pemesanan_menu_categ" 
+        action="tenrihotel_pemesanan_action" 
+        sequence="10"/>
+
+</odoo>

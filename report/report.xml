@@ -1,0 +1,34 @@
+<odoo>
+
+    <!-- Report Supplier -->
+    <record id="report_ruangan_xlsx" model="ir.actions.report">
+        <field name="name">Daftar Ruangan Excel</field>
+        <field name="model">tenrihotel.ruangan</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">tenrihotel.report_ruangan_xlsx</field>
+        <field name="report_file">tenrihotel.report_ruangan_xlsx</field>
+        <field name="binding_model_id" ref="model_tenrihotel_ruangan"/>
+        <field name="binding_type">report</field>
+    </record>
+
+     <record id="report_pemesanan_xlsx" model="ir.actions.report">
+        <field name="name">Pemesanan Excel</field>
+        <field name="model">tenrihotel.pemesanan</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">tenrihotel.report_pemesanan_xlsx</field>
+        <field name="report_file">tenrihotel.report_pemesanan_xlsx</field>
+        <field name="binding_model_id" ref="model_tenrihotel_pemesanan"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_pemesanan_pdf" model="ir.actions.report">
+        <field name="name">Print Faktur</field>
+        <field name="model">tenrihotel.pemesanan</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tenrihotel.report_pemesanan_pdf</field>
+        <field name="report_file">tenrihotel.report_pemesanan_pdf</field>
+        <field name="binding_model_id" ref="model_tenrihotel_pemesanan"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

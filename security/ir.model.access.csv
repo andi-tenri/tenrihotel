@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tenrihotel_tiperuangan,access.tenrihotel.tiperuangan,model_tenrihotel_tiperuangan,,1,1,1,1
+access_tenrihotel_ruangan,access.tenrihotel.ruangan,model_tenrihotel_ruangan,,1,1,1,1
+access_tenrihotel_person,access.tenrihotel.person,model_tenrihotel_person,,1,1,1,1
+access_tenrihotel_kasir,access.tenrihotel.kasir,model_tenrihotel_kasir,,1,1,1,1
+access_tenrihotel_cleaningservice,access.tenrihotel.cleaningservice,model_tenrihotel_cleaningservice,,1,1,1,1
+access_tenrihotel_fasilitas,access.tenrihotel.fasilitas,model_tenrihotel_fasilitas,,1,1,1,1
+access_tenrihotel_restoran,access.tenrihotel.restoran,model_tenrihotel_restoran,,1,1,1,1
+access_tenrihotel_restoranitem,access.tenrihotel.restoranitem,model_tenrihotel_restoranitem,,1,1,1,1
+access_tenrihotel_pemesanan,access.tenrihotel.pemesanan,model_tenrihotel_pemesanan,,1,1,1,1
+access_tenrihotel_detailpemesanan,access.tenrihotel.detailpemesanan,model_tenrihotel_detailpemesanan,,1,1,1,1
+access_tenrihotel_fasilitasbaru,access.tenrihotel.fasilitasbaru,model_tenrihotel_fasilitasbaru,,1,1,1,1

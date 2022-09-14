@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem
+        id="tenrihotel_menu_root"
+        name="Tenri Hotel"
+        sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem
+        id="tenrihotel_reservasi_menu_categ"
+        name="Reservasi"
+        parent="tenrihotel_menu_root"
+        sequence="10"/>
+    
+    <menuitem
+        id="tenrihotel_fasilitas_menu_categ"
+        name="Makanan"
+        parent="tenrihotel_menu_root"
+        sequence="10"/>
+    
+    <menuitem
+        id="tenrihotel_pemesanan_menu_categ"
+        name="Pemesanan"
+        parent="tenrihotel_menu_root"
+        sequence="40"/>
+
+    
+
+</odoo>

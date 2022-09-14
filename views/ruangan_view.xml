@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <!-- tenrihotel.ruangan tree view -->
+    <record id="tenrihotel_ruangan_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Ruangan</field>
+        <field name="model">tenrihotel.ruangan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name" />
+                <field name="jml_orang" />
+                <field name="jml_ruangan" />
+                <field name="harga" />
+                <field name="kode_lantai" />
+                <field name="tiperuangan_id" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- tenrihotel.ruangan form view -->
+    <record id="tenrihotel_ruangan_view_form" model="ir.ui.view">
+        <field name="name">Form Ruangan</field>
+        <field name="model">tenrihotel.ruangan</field>
+        <field name="arch" type="xml">
+            <form string="Ruangan">
+                <sheet>
+                    <group name="Ruangan" string="Ruangan">
+                        <!-- Add your fields here -->
+                        <field name="name" />
+                        <field name="jml_orang" />
+                        <field name="jml_ruangan" />
+                        <field name="kode_lantai" />
+                        <field name="harga" />
+                    </group>
+
+                    <group name="Tipe Ruangan" string="Tipe Ruangan">
+                        <field name="tiperuangan_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- tenrihotel.ruangan action window -->
+    <record id="tenrihotel_ruangan_action" model="ir.actions.act_window">
+        <field name="name">Daftar Ruangan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tenrihotel.ruangan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem
+        id="tenrihotel_ruangan_menu_act"
+        name="Daftar Ruangan"
+        parent="tenrihotel_reservasi_menu_categ"
+        action="tenrihotel_ruangan_action"
+        sequence="20"/>
+
+</odoo>

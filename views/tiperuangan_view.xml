@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Perubahannya ada di sini -->
+    <!-- tenrihotel.ruangan tree view -->
+    <record id="tenrihotel_tiperuangan_view_tree" model="ir.ui.view">
+        <field name="name">tenrihotel.tiperuangan.view.tree</field>
+        <field name="model">tenrihotel.tiperuangan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="kode_ruangan"/>
+                <field name="jml_item" />
+                <field name="daftar" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- tenrihotel.tiperuangan form view -->
+    <record id="tenrihotel_tiperuangan" model="ir.ui.view">
+        <field name="name">tenrihotel.tiperuangan.view.form</field>
+        <field name="model">tenrihotel.tiperuangan</field>
+        <field name="arch" type="xml">
+            <form string="Kelompok Ruangan">
+                <sheet>
+                    <group name="Ruangan" string="Posisi Ruangan">
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="kode_ruangan" />
+
+                    </group>
+
+                    <group name="Daftar Ruangan" string="Daftar Ruangan">
+                        <field name="ruangan_ids" />
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+		<!-- Akhir Perubahan -->
+
+    <!-- tenrihotel.tiperuangan action window -->
+    <record id="tenrihotel_tiperuangan_action" model="ir.actions.act_window">
+        <field name="name">Kelompok Ruangan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tenrihotel.tiperuangan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="tenrihotel_tiperuangan_menu_act"
+        name="Tipe Ruangan"
+        parent="tenrihotel_reservasi_menu_categ"
+        action="tenrihotel_tiperuangan_action"
+        sequence="10"/>
+
+</odoo>
