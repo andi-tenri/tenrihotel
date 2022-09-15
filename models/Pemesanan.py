@@ -101,7 +101,7 @@ class DetailPemesanan(models.Model):
         string='Harga fasilitas',
         onchange='_onchange_fasilitas_id')
     hrg_restoran = fields.Integer(
-        string='Harga fasilitas',
+        string='Harga restoran',
         onchange='_onchange_restoran_id')
     qty = fields.Integer(string='Qty ruangan')
     qty01 = fields.Integer(string='Qty fasilitas')
